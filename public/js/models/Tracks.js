@@ -67,13 +67,16 @@ class Tracks{
          }
       })
       const {audio_features} = await resp.json();
-   
-      const energyData = audio_features.map((currentValue,index)=>{
-         let energy = currentValue.energy;
-         return energy
-      })
+
+      if(audio_features[0]!==null){
+         const energyData = audio_features.map((currentValue,index)=>{
+            let energy = currentValue.energy;
+            return energy
+         })
       
-       this.energy(energyData)
+         this.energy(energyData)
+      }
+      
 
    }
 
@@ -104,9 +107,12 @@ class Tracks{
   }
 
   domDraw(){
-   this.tracks.forEach((element,index)=>{
-      this.domSelector(index);
-   })
+   if(this.tracks.length!==0){
+      this.tracks.forEach((element,index)=>{
+         this.domSelector(index);
+      })
+
+   }
   
   }
 
