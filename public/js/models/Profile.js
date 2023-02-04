@@ -22,9 +22,8 @@ class Profile{
       const {display_name,images} = await resp.json();
 
       this.display_name = `${display_name} — ${display_name} — ${display_name} — ${display_name}`;
-
-      if(images.lenght>=1){
-         console.log(images)
+     
+      if(images.length>=1){
          this.image=images[0].url;
       }
 
@@ -40,7 +39,7 @@ class Profile{
 
    domDraw(){
       document.querySelector('#username').innerHTML=this.display_name;
-      if(this.image){
+      if(this.image!==undefined){
          document.querySelector('#profilepicture').setAttribute('src',this.image);
       }
       document.querySelector('#profileweather').innerHTML= this.profile_temperature +'°';
