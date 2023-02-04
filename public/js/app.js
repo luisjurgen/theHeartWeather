@@ -36,7 +36,7 @@ if(window.location.hash){
   const dowloadImage = document.querySelector('#downloadbutton');
   dowloadImage.addEventListener("click", downloadImg);
 
-  console.log('Four')
+  
 }
 
    

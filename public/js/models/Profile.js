@@ -23,7 +23,8 @@ class Profile{
 
       this.display_name = `${display_name} — ${display_name} — ${display_name} — ${display_name}`;
 
-      if(images){
+      if(images.lenght>=1){
+         console.log(images)
          this.image=images[0].url;
       }
 
@@ -39,7 +40,9 @@ class Profile{
 
    domDraw(){
       document.querySelector('#username').innerHTML=this.display_name;
-      document.querySelector('#profilepicture').setAttribute('src',this.image);
+      if(this.image){
+         document.querySelector('#profilepicture').setAttribute('src',this.image);
+      }
       document.querySelector('#profileweather').innerHTML= this.profile_temperature +'°';
       document.querySelector('#icon-weather-user').setAttribute('src',`assets/${this.profile_iconIndex}.png`);
       // document.querySelector('#icon-weather-user').setAttribute('xlink:href',`assets/icons.svg#${this.profile_iconIndex}`);
