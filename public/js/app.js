@@ -1,4 +1,4 @@
-import { Tracks } from "./models/tracks.js";
+import { Tracks } from "./models/Tracks.js";
 import { Profile } from "./models/Profile.js";
 import { logout } from "./helpers/logout.js";
 import { downloadImg } from "./helpers/download-image.js";
@@ -27,13 +27,15 @@ if(window.location.hash){
 
   profile.domDraw();
   spotifyTracks.domDraw();
+
+  //signout
+  const sigoutbutton = document.querySelector('#signoutbutton')
+  sigoutbutton.addEventListener('click',logout);
+  
+  //downloadImage
+  const dowloadImage = document.querySelector('#downloadbutton');
+  dowloadImage.addEventListener("click", downloadImg);
+
 }
 
-//signout
-const sigoutbutton = document.querySelector('#signoutbutton')
-sigoutbutton.addEventListener('click',logout);
-
-//downloadImage
-const dowloadImage = document.querySelector('#downloadbutton');
-dowloadImage.addEventListener("click", downloadImg);
    
