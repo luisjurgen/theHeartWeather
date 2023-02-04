@@ -1,4 +1,4 @@
-import { Track } from "./track.js";
+import { Track } from "./Track.js";
 import { Weather } from "./Weather.js";
 
 const weather = new Weather();
