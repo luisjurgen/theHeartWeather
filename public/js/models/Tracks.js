@@ -95,7 +95,7 @@ class Tracks{
 
          this.promedio += ((this.tracks[index].temperature)*1);
       })
-      this.promedio= (this.promedio/this.limit).toFixed(1)*1;
+      this.promedio= (this.promedio/this.tracks.length).toFixed(1)*1;
    }
 
    map_range(value, low1=0, high1=1, low2, high2,decimal=0) {

@@ -11,7 +11,7 @@ const generateRandomString = (length) =>{
  };
 
 const login = (req,res)=>{
-   let scope = 'user-read-private user-read-email user-library-read';
+   let scope = ' user-read-email user-library-read';
    let state = generateRandomString(16);
 
    res.cookie(process.env.STATE_KEY,state);

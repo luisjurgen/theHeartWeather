@@ -20,8 +20,12 @@ class Profile{
       })
   
       const {display_name,images} = await resp.json();
+
       this.display_name = `${display_name} — ${display_name} — ${display_name} — ${display_name}`;
-      this.image=images[0].url;
+
+      if(images){
+         this.image=images[0].url;
+      }
 
    }
 
