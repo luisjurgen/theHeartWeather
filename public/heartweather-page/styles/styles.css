@@ -261,6 +261,7 @@ html {
   border-radius: 1rem;
   width: 10rem;
   height: 10rem;
+  object-fit: cover;
   background-color: #2e5aa3;
   background-size: 100%;
   background-repeat: no-repeat;
