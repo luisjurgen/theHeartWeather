@@ -1,6 +1,5 @@
 import { Track } from "./Track.js";
 import { Weather } from "./Weather.js";
-
 const weather = new Weather();
 
 class Tracks{
@@ -18,31 +17,36 @@ class Tracks{
          market: "ES",
          offset: 0
       })
-      const url = `${this.baseURL}/v1/me/tracks?${params}`
-      const resp = await fetch(url,{
-         method:'GET',
-         headers:{
-            'Authorization': 'Bearer ' + access_token
-         }
-      });
-      const {items} = await resp.json();
-      let idsString='';
 
-      items.map((currentValue,index)=>{
-         let id = currentValue.track.id;
-         let name = currentValue.track.name;
-         let artists = currentValue.track.artists[0].name;
-         let duration = currentValue.track.duration_ms;
-         let albumCover= currentValue.track.album.images[0].url;
-         let external_url = currentValue.track.external_urls.spotify
-
-         const comma = index==this.tracks.length+1? '':','
-         idsString += id+comma;
-
-         this.crearTracks(id,name,artists,duration,albumCover,external_url)
-      }) 
-     
-      return idsString
+      
+         
+         const url = `${this.baseURL}/v1/me/tracks?${params}`
+         const resp = await fetch(url,{
+            method:'GET',
+            headers:{
+               'Authorization': 'Bearer ' + access_token
+            }
+         });
+         const {items} = await resp.json();
+         let idsString='';
+        
+   
+         items.map((currentValue,index)=>{
+            let id = currentValue.track.id;
+            let name = currentValue.track.name;
+            let artists = currentValue.track.artists[0].name;
+            let duration = currentValue.track.duration_ms;
+            let albumCover= currentValue.track.album.images[0].url;
+            let external_url = currentValue.track.external_urls.spotify
+   
+            const comma = index==this.tracks.length+1? '':','
+            idsString += id+comma;
+   
+            this.crearTracks(id,name,artists,duration,albumCover,external_url)
+         }) 
+        
+         return idsString
+      
    }
 
    async getTracksAudioFeautures(access_token){

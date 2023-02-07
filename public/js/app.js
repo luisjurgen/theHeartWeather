@@ -2,7 +2,7 @@ import { Tracks } from "./models/Tracks.js";
 import { Profile } from "./models/Profile.js";
 import { logout } from "./helpers/logout.js";
 import { downloadImg } from "./helpers/download-image.js";
-
+import { redirect } from "./helpers/redirect-home.js";
 const getHashParams =()=>{
    let hashParams = {};
    let e;
@@ -15,28 +15,34 @@ const getHashParams =()=>{
 }
 
 if(window.location.hash){
+   try{
+
+      let {access_token, refresh_token, error}= getHashParams();
+      let spotifyTracks = new Tracks();
+      await spotifyTracks.getTracksAudioFeautures(access_token);  
    
-   let {access_token, refresh_token, error}= getHashParams();
-   let spotifyTracks = new Tracks();
-   await spotifyTracks.getTracksAudioFeautures(access_token);  
+      let profile = new Profile();
+      await profile.me(access_token);
+   
+      profile.promedioAsignacion(spotifyTracks.promedio);
+   
+     profile.domDraw();
+     spotifyTracks.domDraw();
+   
+     //signout
+     const sigoutbutton = document.querySelector('#signoutbutton')
+     sigoutbutton.addEventListener('click',logout);
+     
+     //downloadImage
+     const dowloadImage = document.querySelector('#downloadbutton');
+     dowloadImage.addEventListener("click", downloadImg);
+   }catch{
+      redirect()
+   }
 
-   let profile = new Profile();
-   await profile.me(access_token);
-
-   profile.promedioAsignacion(spotifyTracks.promedio);
-
-  profile.domDraw();
-  spotifyTracks.domDraw();
-
-  //signout
-  const sigoutbutton = document.querySelector('#signoutbutton')
-  sigoutbutton.addEventListener('click',logout);
   
-  //downloadImage
-  const dowloadImage = document.querySelector('#downloadbutton');
-  dowloadImage.addEventListener("click", downloadImg);
-
-  
+}else{
+   redirect();
 }
 
    
