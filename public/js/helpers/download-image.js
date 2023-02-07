@@ -1,9 +1,8 @@
 
 
 const downloadImg= ()=>{
-   console.log('descarga')
    const sreenshotTarget = document.querySelector('#container-thw');
-   const params=  { logging: true, letterRendering: 1, allowTaint: true,  useCORS: true } 
+   const params=  { logging: true, letterRendering: 1, allowTaint: false,  useCORS: true } 
    html2canvas (sreenshotTarget,params).then((canvas)=>{
       const base64image = canvas.toDataURL("image/png");
       let anchor = document.createElement('a');

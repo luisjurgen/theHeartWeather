@@ -10,16 +10,6 @@ class Tracks{
       this.promedio=0;
       this.limit= 7
    }
-   async me(access_token){
-      const resp = await fetch (`${this.baseURL}/v1/me`,{
-         method:'GET',
-         headers:{
-            'Authorization': 'Bearer ' + access_token
-         }
-      })
-   
-      console.log(await resp.json())
-   }
 
    async meTracks(access_token){
    
@@ -34,7 +24,7 @@ class Tracks{
          headers:{
             'Authorization': 'Bearer ' + access_token
          }
-      })
+      });
       const {items} = await resp.json();
       let idsString='';
 
@@ -44,11 +34,12 @@ class Tracks{
          let artists = currentValue.track.artists[0].name;
          let duration = currentValue.track.duration_ms;
          let albumCover= currentValue.track.album.images[0].url;
+         let external_url = currentValue.track.external_urls.spotify
 
          const comma = index==this.tracks.length+1? '':','
          idsString += id+comma;
 
-         this.crearTracks(id,name,artists,duration,albumCover)
+         this.crearTracks(id,name,artists,duration,albumCover,external_url)
       }) 
      
       return idsString
@@ -80,8 +71,8 @@ class Tracks{
 
    }
 
-   crearTracks(id,name,artist,duration,albumCover){
-      const track = new Track(id,name,artist,duration,albumCover);
+   crearTracks(id,name,artist,duration,albumCover,external_url){
+      const track = new Track(id,name,artist,duration,albumCover,external_url);
       this.tracks.push(track);
    }
 
@@ -97,6 +88,7 @@ class Tracks{
          this.tracks[index].duration = this.milisegundosAMinutosYSegundos(this.tracks[index].duration);
 
          this.promedio += ((this.tracks[index].temperature)*1);
+         
       })
       this.promedio= (this.promedio/this.tracks.length).toFixed(1)*1;
    }
@@ -120,12 +112,12 @@ class Tracks{
    document.querySelector(`#song-name-${index}`).innerHTML=this.tracks[index].name;
    document.querySelector(`#artist-name-${index}`).innerHTML = this.tracks[index].artists;
    document.querySelector(`#icon-weather-${index}`).setAttribute('src',`assets/${this.tracks[index].iconIndex}.png`);
-  
+   
    // document.querySelector(`#icon-weather-${index}`).setAttribute('xlink:href',`assets/icons.svg#${this.tracks[index].iconIndex}`);
    document.querySelector(`#cover-song-${index}`).setAttribute('src',this.tracks[index].albumCover);
    document.querySelector(`#temperature-song-${index}`).innerHTML = this.tracks[index].temperature+'°';
    document.querySelector(`#duration-song-${index}`).innerHTML = this.tracks[index].duration;
-
+   document.querySelector(`#link-song-${index}`).setAttribute('href',this.tracks[index].external_url);
   }
 
   milisegundosAMinutosYSegundos = (milisegundos) => {
