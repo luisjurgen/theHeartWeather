@@ -269,9 +269,8 @@ html {
 .container {
   background-color: #d2cbc3;
   width: 34rem;
-  height: 193rem;
+  height: 190rem;
   font-size: 2rem;
-  border-radius: 1rem;
 }
 
 .section-header {
@@ -333,32 +332,28 @@ html {
 }
 
 .section-username {
-  height: 5rem;
-  background: #1b4889;
-  background: -moz-linear-gradient(top, #1b4889 0%, #202125 100%);
-  background: -webkit-linear-gradient(top, #1b4889 0%, #202125 100%);
-  background: linear-gradient(to bottom, #1b4889 0%, #202125 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1b4889", endColorstr="#202125",GradientType=0 );
+  height: 3.5rem;
+  background-color: #D86829;
   display: grid;
   align-content: center;
-  color: #d2cbc3;
+  color: #fff;
 }
 .section-username .webpage-container {
   font-family: "Kodchasan";
   height: 2.5rem;
-  font-weight: 700;
-  font-size: 2.5rem;
+  font-weight: 500;
+  font-size: 2.8rem;
   overflow: hidden;
   padding-left: 1.5rem;
 }
 
 .section-weather {
-  height: 14.5rem;
+  height: 13rem;
   background-color: #202125;
 }
 .section-weather .section-weather-container {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 40% 60%;
   color: #d2cbc3;
   justify-items: auto;
   align-items: center;
@@ -371,31 +366,31 @@ html {
 .section-weather .section-weather-container .icon-weather-container .icon-weather-user {
   width: auto;
   max-width: 12rem;
-  padding: 0 0 1rem 1rem;
+  padding: 1rem;
   height: auto;
   max-height: 10rem;
 }
 .section-weather .section-weather-container .weather-information-container {
   display: grid;
+  grid-template-rows: 53% 47%;
   height: 100%;
-  grid-template-rows: 45% 50%;
 }
 .section-weather .section-weather-container .weather-information-container .temperature {
   width: 100%;
   height: 100%;
-  font-size: 5rem;
+  font-size: 4.7rem;
   font-weight: 500;
   margin: auto;
-  padding: 3rem 0 0 0rem;
+  padding: 2.2rem 0 0 0rem;
   text-align: center;
   color: #1cba54;
 }
 .section-weather .section-weather-container .weather-information-container .weather-description {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   margin: auto;
   width: 100%;
   height: 100%;
-  padding: 1.5rem 1.5rem 0 1rem;
+  padding: 0.5rem 1rem 0 0rem;
   text-align: center;
   font-weight: 500;
   color: #d2cbc3;
