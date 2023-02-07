@@ -16,7 +16,8 @@ class Server{
       this.paths={
          login:'/login',
          callback: '/callback',
-         refresh_token:'/refresh_token'
+         refresh_token:'/refresh_token',
+         notFound:'*'
       }
 
       this.middlewares();
@@ -37,7 +38,10 @@ class Server{
       this.app.use(this.paths.login,login);
       this.app.use(this.paths.callback,callback);
       this.app.use(this.paths.refresh_token, refresh_token);
+      this.app.get(this.paths.notFound,(req,res)=>{
+         res.redirect('/')
 
+      })
    }
 
    listen(){
