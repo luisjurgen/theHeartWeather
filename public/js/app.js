@@ -1,7 +1,6 @@
 import { Tracks } from "./models/Tracks.js";
 import { Profile } from "./models/Profile.js";
 import { logout } from "./helpers/logout.js";
-import { downloadImg } from "./helpers/download-image.js";
 import { redirect } from "./helpers/redirect-home.js";
 const getHashParams =()=>{
    let hashParams = {};
@@ -33,9 +32,6 @@ if(window.location.hash){
      const sigoutbutton = document.querySelector('#signoutbutton')
      sigoutbutton.addEventListener('click',logout);
      
-     //downloadImage
-     const dowloadImage = document.querySelector('#downloadbutton');
-     dowloadImage.addEventListener("click", downloadImg);
    }catch{
       redirect()
    }
