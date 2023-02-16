@@ -58,7 +58,7 @@ body, html {
   width: 100%;
 }
 
-.container, .page-container, .container-login {
+.container-privacypolicy, .container, .page-container, .container-login {
   display: flex;
   margin: auto;
 }
@@ -67,7 +67,7 @@ body, html {
   width: 100%;
 }
 
-.firms-container .developed-by .link-instagram, .container-login .footer-login .developed-by .link-instagram {
+.firms-container .firms-container-links .developed-by .link-instagram, .footer-login .container-footer-links .developed-by .link-instagram {
   color: #1cba54;
   border-right: 0.5rem solid #1cba54;
   animation: blink-caret 0.5s step-end infinite;
@@ -79,6 +79,16 @@ body, html {
   50% {
     border-color: #1cba54;
   }
+}
+
+.container-privacypolicy .content-privacypolicy .continaer-homebutton .home-button-pp, .container-privacypolicy .content-privacypolicy .text-pp .link-here, .firms-container .firms-container-links .pp-container .pp-link, .firms-container .firms-container-links .developed-by .link-instagram, .footer-login .container-footer-links .pp-container .pp-link, .footer-login .container-footer-links .developed-by .link-instagram {
+  font-size: 3rem;
+  color: #1cba54;
+  transition: color 0.25s ease;
+}
+.container-privacypolicy .content-privacypolicy .continaer-homebutton .home-button-pp:hover, .container-privacypolicy .content-privacypolicy .text-pp .link-here:hover, .firms-container .firms-container-links .pp-container .pp-link:hover, .firms-container .firms-container-links .developed-by .link-instagram:hover, .footer-login .container-footer-links .pp-container .pp-link:hover, .footer-login .container-footer-links .developed-by .link-instagram:hover {
+  color: #d2cbc3;
+  text-decoration: underline;
 }
 
 *,
@@ -149,7 +159,7 @@ html {
   display: grid;
   height: 100%;
   width: 100%;
-  grid-template-rows: 90% 10%;
+  grid-template-rows: 100%;
   text-align: center;
 }
 .container-login .header-login {
@@ -159,7 +169,7 @@ html {
 }
 .container-login .header-login .home-logo {
   width: 63rem;
-  margin-bottom: 10rem;
+  margin-bottom: 6rem;
 }
 @media (max-width: 759px) {
   .container-login .header-login .home-logo {
@@ -195,7 +205,7 @@ html {
   font-size: 6.5rem;
   padding: 3rem 5rem;
   border-radius: 6rem;
-  margin-top: 10rem;
+  margin-top: 6rem;
 }
 @media (max-width: 759px) {
   .container-login .header-login .home-button {
@@ -203,17 +213,27 @@ html {
     margin-top: 5rem;
   }
 }
-.container-login .footer-login {
-  background-color: #2e5aa3;
-  display: grid;
-  grid-template-rows: 50% 50%;
-}
-.container-login .footer-login .spotify-logo-login {
-  height: 100%;
+
+.footer-login {
   width: 100%;
-  padding-bottom: 5rem;
+  position: absolute;
+  bottom: 0rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: grid;
+  margin-bottom: 5rem;
+  justify-content: center;
+  text-align: center;
 }
-.container-login .footer-login .developed-by {
+.footer-login .logo-sp-container {
+  margin: auto;
+  width: 25rem;
+}
+.footer-login .logo-sp-container .spotify-logo-login {
+  padding-bottom: 3rem;
+}
+.footer-login .container-footer-links .developed-by {
+  padding-bottom: 1.5rem;
   font-size: 3em;
   color: #d2cbc3;
 }
@@ -249,20 +269,21 @@ html {
 }
 .firms-container .spotify-logo-thw {
   width: 25rem;
-  padding: 0 0 2.5rem 0;
+  padding: 0 0 3rem 0;
 }
 @media (max-width: 759px) {
   .firms-container .spotify-logo-thw {
     width: 20rem;
   }
 }
-.firms-container .developed-by {
-  font-size: 3em;
+.firms-container .firms-container-links .developed-by {
+  font-size: 3rem;
   color: #d2cbc3;
   width: 75rem;
+  margin-bottom: 2rem;
 }
 @media (max-width: 759px) {
-  .firms-container .developed-by {
+  .firms-container .firms-container-links .developed-by {
     width: 32rem;
   }
 }
@@ -515,6 +536,61 @@ html {
 
 .link-song-url {
   cursor: default;
+}
+
+.container-privacypolicy {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+.container-privacypolicy .content-privacypolicy {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+.container-privacypolicy .content-privacypolicy .header-pp .home-logo {
+  width: 30rem;
+  margin-bottom: 4rem;
+}
+@media (max-width: 759px) {
+  .container-privacypolicy .content-privacypolicy .header-pp .home-logo {
+    width: 25rem;
+    margin-bottom: 5rem;
+  }
+}
+.container-privacypolicy .content-privacypolicy .header-pp .home-logo .st0 {
+  fill: #d2cbc3;
+}
+.container-privacypolicy .content-privacypolicy .title-pp {
+  font-size: 6.5rem;
+  color: #d2cbc3;
+  font-weight: 500;
+  text-align: center;
+}
+.container-privacypolicy .content-privacypolicy .text-pp {
+  color: #d2cbc3;
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 5rem 50rem;
+  text-align: center;
+  line-height: 5rem;
+}
+@media (max-width: 759px) {
+  .container-privacypolicy .content-privacypolicy .text-pp {
+    font-size: 4rem;
+    margin: 2rem 10rem;
+  }
+}
+.container-privacypolicy .content-privacypolicy .text-pp .link-here {
+  font-size: 1em;
+}
+.container-privacypolicy .content-privacypolicy .continaer-homebutton {
+  margin-top: 6.5rem;
+}
+.container-privacypolicy .content-privacypolicy .continaer-homebutton .home-button-pp {
+  cursor: pointer;
+  font-size: 6rem;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=styles.css.map */

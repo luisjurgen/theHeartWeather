@@ -16,6 +16,7 @@ class Server{
       this.paths={
          login:'/login',
          callback: '/callback',
+         privacy_policy:'./privacy-policy',
          refresh_token:'/refresh_token',
          notFound:'*'
       }
@@ -38,6 +39,9 @@ class Server{
       this.app.use(this.paths.login,login);
       this.app.use(this.paths.callback,callback);
       this.app.use(this.paths.refresh_token, refresh_token);
+      this.app.get(this.paths.privacy_policy,((req,res)=>{
+         res.redirect('/privacy-policy')
+      }))
       this.app.get(this.paths.notFound,(req,res)=>{
          res.redirect('/')
 
