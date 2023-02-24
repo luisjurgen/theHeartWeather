@@ -54,7 +54,7 @@ class Weather{
          },
          {
             valueMax:32.55,
-            nameTime:'Party Cloudy',
+            nameTime:'Partly Cloudy',
             iconIndex:9
          },
          {
