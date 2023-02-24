@@ -100,7 +100,7 @@ body, html {
 
 html {
   background: #1db954;
-  font-size: calc(95vh/1920*10);
+  font-size: calc(90vh/1920*10);
   line-height: 1;
   overflow: hidden;
   position: fixed;
@@ -108,12 +108,12 @@ html {
 }
 @media (max-width: 1499px) {
   html {
-    font-size: calc(95vh/1920*10);
+    font-size: calc(90vh/1920*10);
   }
 }
 @media (max-width: 759px) {
   html {
-    font-size: calc(95vh/1920*10);
+    font-size: calc(90vh/1920*10);
   }
 }
 
