@@ -113,7 +113,7 @@ html {
 }
 @media (max-width: 759px) {
   html {
-    font-size: calc(86vh/1920*10);
+    font-size: calc(85vh/1920*10);
   }
 }
 
