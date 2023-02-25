@@ -117,12 +117,15 @@ class Tracks{
    document.querySelector(`#artist-name-${index}`).innerHTML = this.tracks[index].artists;
    document.querySelector(`#icon-weather-${index}`).setAttribute('src',`assets/${this.tracks[index].iconIndex}.png`);
    
-   // document.querySelector(`#icon-weather-${index}`).setAttribute('xlink:href',`assets/icons.svg#${this.tracks[index].iconIndex}`);
    document.querySelector(`#cover-song-${index}`).setAttribute('src',this.tracks[index].albumCover);
+   
    document.querySelector(`#temperature-song-${index}`).innerHTML = this.tracks[index].temperature+'°';
+   // document.querySelector(`#temperature-song-${index}`).style.transform=`rotate(${this.getRandomForTransform(-30,30)}deg)`;
+   
    document.querySelector(`#duration-song-${index}`).innerHTML = this.tracks[index].duration;
    document.querySelector(`#link-song-${index}`).setAttribute('href',this.tracks[index].external_url);
-  }
+   
+}
 
   milisegundosAMinutosYSegundos = (milisegundos) => {
 	const minutos = parseInt(milisegundos / 1000 / 60);
@@ -138,6 +141,10 @@ class Tracks{
 		return "" + valor;
 	}
 }
+
+getRandomForTransform(min, max) {
+   return Math.random() * (max - min) + min;
+ }
 
   
 

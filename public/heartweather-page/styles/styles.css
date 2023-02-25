@@ -99,7 +99,7 @@ body, html {
 }
 
 html {
-  background: #1db954;
+  background: #286cd8;
   font-size: calc(90vh/1920*10);
   line-height: 1;
   overflow: hidden;
@@ -152,7 +152,7 @@ button {
 }
 
 html {
-  background-color: #2e5aa3;
+  background: #286cd8;
 }
 
 .container-login {
@@ -295,7 +295,7 @@ html {
 }
 
 .section-header {
-  background-color: #1b4889;
+  background-color: #2e5aa3;
   height: 12.5rem;
 }
 .section-header .section-header-container {
@@ -342,6 +342,8 @@ html {
 .section-header .section-header-container .intro-container .name-THW-text {
   font-family: "Kodchasan";
   height: 3.3rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   overflow: hidden;
   font-weight: 700;
   font-size: 3rem;
@@ -371,19 +373,18 @@ html {
 
 .section-weather {
   height: 13rem;
-  background-color: #202125;
+  background-color: #d2cbc3;
 }
 .section-weather .section-weather-container {
   display: grid;
-  grid-template-columns: 40% 60%;
-  color: #d2cbc3;
+  grid-template-columns: 42% 58%;
   justify-items: auto;
   align-items: center;
   height: 100%;
+  background-color: #2e5aa3;
 }
 .section-weather .section-weather-container .icon-weather-container {
   margin: auto;
-  padding-left: 1rem;
 }
 .section-weather .section-weather-container .icon-weather-container .icon-weather-user {
   width: auto;
@@ -394,8 +395,9 @@ html {
 }
 .section-weather .section-weather-container .weather-information-container {
   display: grid;
-  grid-template-rows: 53% 47%;
   height: 100%;
+  align-content: center;
+  background-color: #234a88;
 }
 .section-weather .section-weather-container .weather-information-container .temperature {
   width: 100%;
@@ -403,20 +405,20 @@ html {
   font-size: 4.7rem;
   font-weight: 700;
   margin: auto;
-  padding: 2.2rem 0 0 0rem;
   text-align: center;
-  color: #1cba54;
+  color: #d2cbc3;
 }
 .section-weather .section-weather-container .weather-information-container .weather-description {
   font-size: 2.4rem;
   margin: auto;
   width: 100%;
   height: 100%;
-  padding: 0.5rem 1rem 0 0rem;
+  padding: 0.25rem 1rem 0 1rem;
   text-align: center;
-  font-weight: 500;
-  color: #d2cbc3;
+  font-weight: 400;
+  color: #fff;
   opacity: 0.8;
+  overflow: hidden;
 }
 
 .section-songs {
@@ -507,7 +509,7 @@ html {
   justify-content: flex-end;
 }
 .section-songs .track-frame .track-frame-container .bottom-container .temperature-duration-container .duration-track {
-  color: #d2cbc3;
+  color: #b1b1b1;
   font-weight: 500;
   font-size: 2.6rem;
 }
@@ -515,10 +517,9 @@ html {
   background-color: #2e5aa3;
   color: #d2cbc3;
   font-weight: 500;
-  font-size: 3.8rem;
-  padding-bottom: 0.5rem;
+  font-size: 3.6rem;
   padding-top: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   margin-top: 0.5rem;
 }
 

@@ -9,5 +9,6 @@ export class Track {
       this.temperature=null;
       this.iconIndex=null;
       this.external_url= external_url;
+   
    }
 }
