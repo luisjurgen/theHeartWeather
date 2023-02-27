@@ -55,7 +55,7 @@ class Profile{
 
       document.querySelector('#date-thw').innerHTML = this.date;
       document.querySelector('#profileweather').innerHTML= this.profile_temperature +'°';
-      document.querySelector('#icon-weather-user').setAttribute('src',`assets/${this.profile_iconIndex}.png`);
+      document.querySelector('#icon-weather-user').setAttribute('src',`assets/heart-faces/${this.profile_iconIndex}.png`);
       
       document.querySelector('#name-time').innerHTML=this.nameTime;
    }

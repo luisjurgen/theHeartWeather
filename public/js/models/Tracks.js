@@ -115,8 +115,9 @@ class Tracks{
   domSelector(index){
    document.querySelector(`#song-name-${index}`).innerHTML=this.tracks[index].name;
    document.querySelector(`#artist-name-${index}`).innerHTML = this.tracks[index].artists;
-   document.querySelector(`#icon-weather-${index}`).setAttribute('src',`assets/${this.tracks[index].iconIndex}.png`);
-   
+   document.querySelector(`#icon-weather-${index}`).setAttribute('href',`assets/icons-face.svg#${this.tracks[index].iconIndex}`);
+   // document.querySelector(`#icon-weather-${index}`).setAttribute('src',`assets/heart-icons-face/a_${this.tracks[index].iconIndex}.png`);
+
    document.querySelector(`#cover-song-${index}`).setAttribute('src',this.tracks[index].albumCover);
    
    document.querySelector(`#temperature-song-${index}`).innerHTML = this.tracks[index].temperature+'°';

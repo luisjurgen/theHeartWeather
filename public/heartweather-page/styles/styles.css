@@ -384,14 +384,16 @@ html {
   background-color: #2e5aa3;
 }
 .section-weather .section-weather-container .icon-weather-container {
-  margin: auto;
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100%;
 }
 .section-weather .section-weather-container .icon-weather-container .icon-weather-user {
+  display: block;
   width: auto;
-  max-width: 12rem;
-  padding: 1rem;
-  height: auto;
-  max-height: 10rem;
+  height: 13rem;
+  object-fit: fill;
 }
 .section-weather .section-weather-container .weather-information-container {
   display: grid;
@@ -449,6 +451,8 @@ html {
 }
 .section-songs .track-frame .track-frame-container .top-container .container-song-data {
   display: grid;
+  grid-template-rows: auto auto;
+  align-content: start;
 }
 .section-songs .track-frame .track-frame-container .top-container .container-song-data .song-name {
   font-size: 2.9rem;
@@ -469,26 +473,25 @@ html {
 .section-songs .track-frame .track-frame-container .top-container .container-icon-and-day {
   display: grid;
   text-align: right;
-  grid-template-rows: 4rem auto;
+  grid-template-rows: 5.15rem auto;
 }
 .section-songs .track-frame .track-frame-container .top-container .container-icon-and-day .icon-weather-track-container {
   height: 100%;
   width: 100%;
   display: grid;
-  justify-items: end;
-  align-items: end;
+  place-content: center;
+  overflow: hidden;
 }
 .section-songs .track-frame .track-frame-container .top-container .container-icon-and-day .icon-weather-track-container .icon-weather-track {
-  height: auto;
-  max-height: 4rem;
-  width: auto;
-  max-width: 94%;
+  display: block;
+  width: 100%;
+  height: 5.15rem;
 }
 .section-songs .track-frame .track-frame-container .top-container .container-icon-and-day .day-track {
   font-size: 2rem;
   color: #b1b1b1;
   font-weight: 400;
-  padding-top: 0.75rem;
+  padding-top: 0.5rem;
 }
 .section-songs .track-frame .track-frame-container .bottom-container {
   display: grid;
