@@ -327,17 +327,17 @@ html {
   background-repeat: no-repeat;
 }
 .section-header .section-header-container .intro-container {
-  padding-left: 0.1rem;
   display: grid;
-  padding-right: 2rem;
+  padding-right: 1.25rem;
 }
 .section-header .section-header-container .intro-container .quote-THW-text {
   font-family: "Kodchasan";
   font-weight: 600;
-  font-size: 1.75rem;
-  color: #d2cbc3;
+  font-size: 2.2rem;
+  color: #b1b1b1;
   padding-bottom: 0.15rem;
-  max-height: 1.75rem;
+  max-height: 2.2rem;
+  overflow: hidden;
 }
 .section-header .section-header-container .intro-container .name-THW-text {
   font-family: "Kodchasan";
@@ -464,7 +464,7 @@ html {
 .section-songs .track-frame .track-frame-container .top-container .container-song-data .artist-name {
   color: #d2cbc3;
   font-size: 2.5rem;
-  font-weight: 500;
+  font-weight: 400;
   max-height: 2.5rem;
   white-space: nowrap;
   text-overflow: ellipsis;
