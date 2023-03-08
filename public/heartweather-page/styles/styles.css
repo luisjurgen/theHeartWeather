@@ -292,6 +292,7 @@ html {
   width: 34rem;
   height: 190rem;
   font-size: 2rem;
+  z-index: 1;
 }
 
 .section-header {
