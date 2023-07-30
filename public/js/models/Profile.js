@@ -70,7 +70,7 @@ class Profile{
    const months = ['JAN','FEB','MAR', 'APR', 'MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
    const [month, day] = [months[date.getMonth()], date.getDate()]
    const year = date.getFullYear();
-   return `${month} ${day}, ${year}`
+   return `${month} ${day}`
 
   }
 
